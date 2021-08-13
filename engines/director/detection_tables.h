@@ -785,6 +785,7 @@ static const PlainGameDescriptor directorGames[] = {
 	{ "dkmm2",				"Dorling Kindersley Multimedia Sampler Disc 2" },
 	{ "edmark",				"Edmark Demo" },
 	{ "emme",				"E.M.M.E. Interactive: The Keys to Knowledge" },
+	{ "exos",				"Exos Powerstick Promo"},
 	{ "eureka",				"Eureka Multimedia Promo" },
 	{ "fppuddlebooks",		"Fisher-Price Read & Play: Puddle Books Demos" },
 	{ "grolier",			"Grolier Products" },
@@ -2006,6 +2007,8 @@ static const DirectorGameDescription gameDescriptions[] = {
 	MACGAME1_l("emme", "", "Les Secrets de la conn..Pow_Mac", "6d6772c4177764f6b556ba7c88f9b949", 60905, Common::FR_FRA, 404),
 	WINGAME1("emme", "", "EMMPCENG.EXE", "b03fc5677dddb8fa85d24361a0e1e9b9", 4406907, 404),
 	WINGAME1_l("emme", "", "EMMPCFRA.EXE", "b3ab1dab136dd60fca422409d8876375", 5120157, Common::FR_FRA, 404),
+
+	WINGAME1("exos", "", "EXOSDEMO.EXE", "e26dc25e9f03c4343375e84521dc0c7d", 4001759, 400),
 
 	MACGAME1("explorers", "",	"Explorers",	"ea646eccc9a53f44ce082459d4809a06", 483774, 404),
 	WINGAME2("explorers", "",	"XPLRNW.EXE",	"907c28b272eb40fad1b5f42ec841b010", 696741,
