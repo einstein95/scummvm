@@ -123,6 +123,7 @@ namespace Agi {
 	}
 
 #define BOOTER1_U(id,msg,fname,md5,size,ver,gid) GAME_LVFPNU(id,msg,fname,md5,size,Common::EN_ANY,ver,0,gid,Common::kPlatformDOS,GType_V1,GAMEOPTIONS_DEFAULT)
+#define BOOTER1_P(id,extra,fname,md5,size,ver,gid) GAME_LVFPN_PIRATED(id,extra,fname,md5,size,Common::EN_ANY,ver,0,gid,Common::kPlatformDOS,GType_V1,GAMEOPTIONS_DEFAULT)
 #define BOOTER2(id,extra,fname,md5,size,ver,gid) GAME_LVFPN(id,extra,fname,md5,size,Common::EN_ANY,ver,0,gid,Common::kPlatformDOS,GType_V2,GAMEOPTIONS_DEFAULT)
 #define GAME(id,extra,md5,ver,gid) GAME_LVFPN(id,extra,"logdir",md5,-1,Common::EN_ANY,ver,0,gid,Common::kPlatformDOS,GType_V2,GAMEOPTIONS_DEFAULT)
 #define GAME3(id,extra,fname,md5,ver,gid) GAME_LVFPN(id,extra,fname,md5,-1,Common::EN_ANY,ver,0,gid,Common::kPlatformDOS,GType_V3,GAMEOPTIONS_DEFAULT)
@@ -150,6 +151,7 @@ namespace Agi {
 #define GAMEpre_PU(id,msg,fname_1,md5_1,size_1,fname_2,md5_2,size_2,ver,gid,platform) GAME_LVFPN2U(id,msg,fname_1,md5_1,size_1,fname_2,md5_2,size_2,Common::EN_ANY,ver,0,gid,platform,GType_PreAGI,GAMEOPTIONS_DEFAULT)
 #define GAMEpre_PO(id,extra,fname_1,md5_1,size_1,fname_2,md5_2,size_2,ver,gid,platform,guioptions) GAME_LVFPN2(id,extra,fname_1,md5_1,size_1,fname_2,md5_2,size_2,Common::EN_ANY,ver,0,gid,platform,GType_PreAGI,guioptions)
 #define GAMEpre_PS(id,extra,fname,md5,size,ver,gid,platform) GAME_LVFPN(id,extra,fname,md5,size,Common::EN_ANY,ver,0,gid,platform,GType_PreAGI,GAMEOPTIONS_DEFAULT)
+#define GAMEpre_PSP(id,extra,fname,md5,size,ver,gid,platform) GAME_LVFPN_PIRATED(id,extra,fname,md5,size,Common::EN_ANY,ver,0,gid,platform,GType_PreAGI,GAMEOPTIONS_DEFAULT)
 #define GAMEpre_PSU(id,msg,fname,md5,size,ver,gid,platform) GAME_LVFPNU(id,msg,fname,md5,size,Common::EN_ANY,ver,0,gid,platform,GType_PreAGI,GAMEOPTIONS_DEFAULT)
 
 #define GAME3_PS(id,extra,fname,md5,size,ver,flags,gid,platform) GAME_LVFPN(id,extra,fname,md5,size,Common::EN_ANY,ver,flags,gid,platform,GType_V3,GAMEOPTIONS_DEFAULT)
@@ -237,6 +239,28 @@ static const AGIGameDescription gameDescriptions[] = {
 			Common::EN_ANY,
 			Common::kPlatformDOS,
 			ADGF_NO_FLAGS,
+			GAMEOPTIONS_DEFAULT
+		},
+		GID_BC,
+		GType_V1,
+		0,
+		0x1120
+	},
+
+	{
+		// Black Cauldron (PC 3.5" booter) 1.1K [AGI 1.12]
+		// Cracked by Demonlord 07/08/98...
+		{
+			"bc",
+			"Booter 1.1K",
+			{
+				{ "bc-d1.img", BooterDisk1, "4c43a7bd2a39f8abc853757b1b2cab2a", 368640},
+				{ "bc-d2.img", BooterDisk2, "5568f7a52e787305656246f95e2aa375", 368640},
+				AD_LISTEND
+			},
+			Common::EN_ANY,
+			Common::kPlatformDOS,
+			ADGF_PIRATED,
 			GAMEOPTIONS_DEFAULT
 		},
 		GID_BC,
@@ -396,6 +420,9 @@ static const AGIGameDescription gameDescriptions[] = {
 	// King's Quest 1 (Tandy 1000) 01.01.00 5/24/84
 	BOOTER1_U("kq1", "Early King\'s Quest releases are not currently supported.",
 		"kq1.img", "0a22131d0eaf66d955afecfdc83ef9d6", 368640, 0x1120, GID_KQ1),
+
+	// Save/restore fix brought to you   by Demonlord      07/12/98
+	BOOTER1_P("kq1", "", "kq1.img", "1a1162e4f325e285472f99e3998417f1", 368640, 0x1120, GID_KQ1),
 
 	// King's Quest 1 (PC 5.25"/3.5") 2.0F [AGI 2.917]
 	GAME("kq1", "2.0F 1987-05-05 5.25\"/3.5\"", "10ad66e2ecbd66951534a50aedcd0128", 0x2917, GID_KQ1),
@@ -835,7 +862,8 @@ static const AGIGameDescription gameDescriptions[] = {
 	GAMEpre_PS("troll", "", "troll.img", "62903f264b3d849be4214b3a5c42a2fa", 184320, 0x0000, GID_TROLL, Common::kPlatformDOS),
 
 	// Troll's Tale (PC Booter)
-	GAMEpre_PS("troll", "", "troll.img", "2b7f6da1b1008bfb22750e6ab7359942", 184320, 0x0000, GID_TROLL, Common::kPlatformDOS),
+	// Cracked by Demonlord 10/28/00...
+	GAMEpre_PSP("troll", "", "troll.img", "2b7f6da1b1008bfb22750e6ab7359942", 184320, 0x0000, GID_TROLL, Common::kPlatformDOS),
 
 	// Troll's Tale (DOS)
 	GAMEpre_PSU("troll", "MS-DOS versions of Troll's Tale are not currently supported.",
