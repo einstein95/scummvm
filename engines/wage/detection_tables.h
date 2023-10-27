@@ -138,6 +138,7 @@ static const ADGameDescription gameDescriptions[] = {
 	FANGAME("Galactic Warrior", "bf61d2344a63b597ab288ddaacfa402a", 89117),
 	BIGGAME("grailquest", "", "GrailQuest", "6441d134c0aedd8cb3b6909107a22ee3", 739452),
 	BIGGAMED("grailquest", "Demo", "GrailQuest.demo", "c0ef30ef7e4119fe76c5fbe2f930e7b1", 190810),
+	BIGGAMED("grailquest", "Demo", "GrailQuest.demo", "9647cccd7c754bae2ea72c6971c9f697", 193280), // alt version
 	FANGAME("Haikook", "405d383b273a0252645962e0e664be20", 419636),
 	FANGAME("Grey Tower", "02d0bb7a8c278d3789616129d47f15c1", 397248), // v1.5.2
 	FANGAMEN("Haunted House", "The haunted house 1.4", "655ff082160909beb83b99979cdfc2c6", 107959),
@@ -145,7 +146,7 @@ static const ADGameDescription gameDescriptions[] = {
 	FANGAMEN("The Hotel Caper", "The Hotel Caper V1.0", "c9b3c75814fc6b14feae044157bef252", 231713),
 	FANGAMEN("The Hotel Caper", "The Hotel Caper V1.0", "4658ece81a6f211a828e747125482f48", 231713), // alt version
 	FANGAMEN("The Hotel Caper", "The Hotel Caper V1.0", "baaaae4569fbb1947d74667ac484bea9", 231773), // alt version
-	FANGAMEN("The Hotel Caper",		"Hotel Caper V1.0", "138e89e5d5bcac6aba222cf33677bcec", 231127),
+	FANGAMEN("The Hotel Caper",		"Hotel Caper V1.0", "138e89e5d5bcac6aba222cf33677bcec", 231127), // alt version
 	FANGAMEN("The Hotel Caper", "The Hotel Caper V2.0", "eed79653ca95f4e953aa0ff41e8c8034", 260418),
 	FANGAMEN(".i.f.", "xn--.i.f.-", "575fc0c25e9823dd742de1acdcaac325", 183221),
 	FANGAMEN("Introduction to Gothic", "Intro to Gothic", "606eec666f0b2d767e4423747e740434", 207811),
