@@ -55,6 +55,7 @@ MODULE_OBJS = \
 	lingo/xlibs/aiff.o \
 	lingo/xlibs/applecdxobj.o \
 	lingo/xlibs/askuser.o \
+	lingo/xlibs/backdrop.o \
 	lingo/xlibs/barakeobj.o \
 	lingo/xlibs/batqt.o \
 	lingo/xlibs/blitpict.o \
@@ -84,6 +85,7 @@ MODULE_OBJS = \
 	lingo/xlibs/findfolder.o \
 	lingo/xlibs/findsys.o \
 	lingo/xlibs/findwin.o \
+	lingo/xlibs/flcxobj.o \
 	lingo/xlibs/flushxobj.o \
 	lingo/xlibs/fplayxobj.o \
 	lingo/xlibs/gpid.o \
@@ -121,6 +123,8 @@ MODULE_OBJS = \
 	lingo/xlibs/soundjam.o \
 	lingo/xlibs/spacemgr.o \
 	lingo/xlibs/stagetc.o \
+	lingo/xlibs/sysenv.o \
+	lingo/xlibs/systemfolder.o \
 	lingo/xlibs/unittest.o \
 	lingo/xlibs/valkyrie.o \
 	lingo/xlibs/videodiscxobj.o \

@@ -23,6 +23,7 @@
 *
 * USED IN:
 * jman-win
+* Oscar Wilde's The Selfish Giant (Win)
 *
 *************************************/
 
@@ -52,10 +53,10 @@ const char *DPwQTw::fileNames[] = {
 };
 
 static MethodProto xlibMethods[] = {
-	{ "new",		DPwQTw::m_new,			 0, 1,	400 },	// D4
-	{ "startup",	DPwQTw::m_startup,		 0, 0,	400 },	// D4
-	{ "quit",		DPwQTw::m_quit,			 0, 0,	400 },	// D4
-	{ "verb",		DPwQTw::m_verb,			 2, 2,	400 },	// D4
+	{ "new",		DPwQTw::m_new,			 0, 1,	300 },	// D3
+	{ "startup",	DPwQTw::m_startup,		 0, 0,	300 },	// D3
+	{ "quit",		DPwQTw::m_quit,			 0, 0,	300 },	// D3
+	{ "verb",		DPwQTw::m_verb,			 2, 2,	300 },	// D3
 	{ nullptr, nullptr, 0, 0, 0 }
 };
 

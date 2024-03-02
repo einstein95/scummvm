@@ -32,6 +32,7 @@
 #include "director/lingo/xlibs/aiff.h"
 #include "director/lingo/xlibs/applecdxobj.h"
 #include "director/lingo/xlibs/askuser.h"
+#include "director/lingo/xlibs/backdrop.h"
 #include "director/lingo/xlibs/barakeobj.h"
 #include "director/lingo/xlibs/batqt.h"
 #include "director/lingo/xlibs/blitpict.h"
@@ -61,6 +62,7 @@
 #include "director/lingo/xlibs/findfolder.h"
 #include "director/lingo/xlibs/findsys.h"
 #include "director/lingo/xlibs/findwin.h"
+#include "director/lingo/xlibs/flcxobj.h"
 #include "director/lingo/xlibs/flushxobj.h"
 #include "director/lingo/xlibs/fplayxobj.h"
 #include "director/lingo/xlibs/gpid.h"
@@ -98,6 +100,8 @@
 #include "director/lingo/xlibs/soundjam.h"
 #include "director/lingo/xlibs/spacemgr.h"
 #include "director/lingo/xlibs/stagetc.h"
+#include "director/lingo/xlibs/sysenv.h"
+#include "director/lingo/xlibs/systemfolder.h"
 #include "director/lingo/xlibs/unittest.h"
 #include "director/lingo/xlibs/valkyrie.h"
 #include "director/lingo/xlibs/videodiscxobj.h"
@@ -185,6 +189,7 @@ static struct XLibProto {
 	{ AiffXObj::fileNames,				AiffXObj::open,				AiffXObj::close,			kXObj,					400 },	// D4
 	{ AppleCDXObj::fileNames,			AppleCDXObj::open,			AppleCDXObj::close,			kXObj,					300 },	// D3
 	{ AskUser::fileNames,				AskUser::open,				AskUser::close,				kXObj,					400 },	// D4
+	{ BackdropXObj::fileNames,			BackdropXObj::open,			BackdropXObj::close,		kXObj,					400 },	// D4
 	{ BarakeObj::fileNames,				BarakeObj::open,			BarakeObj::close,			kXObj,					400 },	// D4
 	{ BatQT::fileNames,					BatQT::open,				BatQT::close,				kXObj,					400 },	// D4
 	{ BlitPictXObj::fileNames,			BlitPictXObj::open,			BlitPictXObj::close,		kXObj,					400 },	// D4
@@ -198,13 +203,14 @@ static struct XLibProto {
 	{ DialogsXObj::fileNames,			DialogsXObj::open,			DialogsXObj::close,			kXObj,					400 },	// D4
 	{ DirUtilXObj::fileNames,			DirUtilXObj::open,			DirUtilXObj::close,			kXObj,					400 },	// D4
 	{ DPwAVI::fileNames,				DPwAVI::open,				DPwAVI::close,				kXObj,					400 },	// D4
-	{ DPwQTw::fileNames,				DPwQTw::open,				DPwQTw::close,				kXObj,					400 },	// D4
+	{ DPwQTw::fileNames,				DPwQTw::open,				DPwQTw::close,				kXObj,					300 },	// D4
 	{ DrawXObj::fileNames,				DrawXObj::open,				DrawXObj::close,			kXObj,					400 },	// D4
 	{ Ednox::fileNames,					Ednox::open,				Ednox::close,				kXObj,					300 },	// D3
 	{ EventQXObj::fileNames,			EventQXObj::open,			EventQXObj::close,			kXObj,					400 },	// D4
 	{ FEDraculXObj::fileNames,			FEDraculXObj::open,			FEDraculXObj::close,		kXObj,					400 },	// D4
 	{ FEIMasksXObj::fileNames,			FEIMasksXObj::open,			FEIMasksXObj::close,		kXObj,					400 },	// D4
 	{ FEIPrefsXObj::fileNames,			FEIPrefsXObj::open,			FEIPrefsXObj::close,		kXObj,					400 },	// D4
+	{ FLCXObj::fileNames,				FLCXObj::open,				FLCXObj::close,				kXObj,					400 },	// D4
 	{ FadeGammaDownXCMD::fileNames,		FadeGammaDownXCMD::open,	FadeGammaDownXCMD::close,	kXObj,					400 },	// D4
 	{ FadeGammaUpXCMD::fileNames,		FadeGammaUpXCMD::open,		FadeGammaUpXCMD::close,		kXObj,					400 },	// D4
 	{ FadeGammaXCMD::fileNames,			FadeGammaXCMD::open,		FadeGammaXCMD::close,		kXObj,					400 },	// D4
@@ -252,6 +258,8 @@ static struct XLibProto {
 	{ SoundJam::fileNames,				SoundJam::open,				SoundJam::close,			kXObj,					400 },	// D4
 	{ SpaceMgr::fileNames,				SpaceMgr::open,				SpaceMgr::close,			kXObj,					400 },	// D4
 	{ StageTCXObj::fileNames,			StageTCXObj::open,			StageTCXObj::close,			kXObj,					400 },	// D4
+	{ SysEnvXFCN::fileNames,			SysEnvXFCN::open,			SysEnvXFCN::close,		kXObj,					400 },	// D4
+	{ SystemFolderXFCN::fileNames,			SystemFolderXFCN::open,			SystemFolderXFCN::close,		kXObj,					400 },	// D4
 	{ UnitTest::fileNames,				UnitTest::open,				UnitTest::close,			kXObj,					400 },	// D4
 	{ VMisOnXFCN::fileNames,			VMisOnXFCN::open,			VMisOnXFCN::close,			kXObj,					400 },	// D4
 	{ ValkyrieXObj::fileNames,			ValkyrieXObj::open,			ValkyrieXObj::close,		kXObj,					400 },	// D4

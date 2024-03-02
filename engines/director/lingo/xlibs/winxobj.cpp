@@ -19,6 +19,14 @@
  *
  */
 
+#include "common/system.h"
+
+#include "director/director.h"
+#include "director/lingo/lingo.h"
+#include "director/lingo/lingo-object.h"
+#include "director/lingo/lingo-utils.h"
+#include "director/lingo/xlibs/winxobj.h"
+
 /*************************************
  *
  * USED IN:
@@ -36,24 +44,6 @@
  * Implemented as a no-op, since ScummVM doesn't handle desktop backgrounds.
  */
 
-#include "director/director.h"
-#include "director/lingo/lingo.h"
-#include "director/lingo/lingo-object.h"
-#include "director/lingo/xlibs/winxobj.h"
-
-
-namespace Director {
-
-const char *RearWindowXObj::xlibName = "RearWindow";
-const char *RearWindowXObj::fileNames[] = {
-	"Backdrop",
-	"RearWindow",
-	"RearWindow.Xobj",
-	"RearWindow XObj",
-	"RW.XOB",
-	"winXObj",
-	nullptr
-};
 
 /*
 -- RearWindow.XObj by David Jackson-Shields
@@ -233,6 +223,18 @@ X mDispose -- closes the RearWindow, releases its data, and the XObject itself f
 /I    mDevPixMapToWindow
 */
 
+namespace Director {
+
+const char *RearWindowXObj::xlibName = "RearWindow";
+const char *RearWindowXObj::fileNames[] = {
+	"RearWindow",
+	"RearWindow.Xobj",
+	"RearWindow XObj",
+	"RW.XOB",
+	"winXObj",
+	nullptr
+};
+
 static MethodProto xlibMethods[] = {
 	{ "new",				RearWindowXObj::m_new,					1,	1,	400 },	// D4
 	{ "getappname",			RearWindowXObj::m_getAppName,			0,	0,	400 },	// D4
@@ -277,14 +279,8 @@ void RearWindowXObj::m_getMemoryNeeded(int nargs) {
 	g_lingo->push(Datum(0));
 }
 
-void RearWindowXObj::m_patToWindow(int nargs) {
-	g_lingo->pop();
-	g_lingo->push(Datum(0));
-}
-
-void RearWindowXObj::m_indexColorToWindow(int nargs) {
-	g_lingo->pop();
-}
+XOBJSTUB(RearWindowXObj::m_patToWindow, 0)
+XOBJSTUBNR(RearWindowXObj::m_indexColorToWindow)
 
 void RearWindowXObj::m_getAppName(int nargs) {
 	g_lingo->push(Datum(g_director->getStartMovie().startMovie));
